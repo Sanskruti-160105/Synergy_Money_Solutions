@@ -1,0 +1,3689 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    background:#ffffff;
+    line-height: 1.6;
+    overflow-x:hidden;
+}
+
+a {
+    text-decoration:none;
+    color:inherit;
+}
+
+img {
+    max-width: 100%;
+    height:auto;
+    display: block;
+} 
+
+
+/*=======================================
+Container
+=========================================*/
+
+
+.container {
+    width:90%;
+    max-width: 1200px;
+    margin:auto;
+}
+
+/*=======================================
+Header/Navbar
+=========================================*/
+
+.header {
+    background: #ffffff;
+    border-bottom:1px solid #eeeeee;
+    position:sticky;
+    top:0;
+    z-index: 1000;
+}
+
+.navbar {
+    min-height:80px;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+}
+
+.logo {
+    display:flex;
+    align-items:center;
+    flex-shrink:0;
+}
+
+.logo img{
+    width:180px;
+    max-width:180px;
+    height:auto;
+    object-fit:contain;
+    display:block;
+}
+
+.nav-menu {
+    display:flex;
+    align-items:center;
+    gap: 25px;
+    
+}
+
+.nav-menu > a, .service-link{
+    font-size: 15px;
+    font-weight: 500;
+
+}
+
+/* Services-Link*/
+
+.nav-dropdown{
+    position:relative;
+}
+
+.service-link{
+    display:block;
+}
+
+/*Dropdown box */
+
+.dropdown-menu{
+    position:absolute;
+    top:100%;
+    left:0;
+
+    min-width:230px;
+
+    background:#ffffff;
+    border-radius:8px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.12);
+    padding:10px 0;
+    display:none;
+    z-index:1000;
+}
+
+/* Dropdown links*/
+
+.dropdown-menu a {
+    display:block;
+    padding:12px 18px;
+    color:#333;
+    text-decoration:none;
+    font-size:14px;
+    white-space: nowrap;
+}
+
+/* Hover*/
+
+.dropdown-menu a:hover{
+    background:#f1f6ff;
+    color:#1557c0;
+}
+
+/*Show Dropdown*/
+
+.nav-dropdown:hover .dropdown-menu{
+    display:block;
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 28px;
+    cursor: pointer;
+}  
+
+.nav-button {
+    padding: 11px 18px;
+    border-radius:6px;
+    background:none;
+    font-size: 28px;
+    cursor: pointer;
+} 
+
+
+/*=======================================
+Buttons
+=========================================*/
+
+.btn {
+    display:inline-block;
+    padding: 13px 22px;
+    border-radius:6px;
+    font-weight:600;
+    transition:0.3s ease;
+}
+
+.btn-primary {
+    border:2px solid #fbfbfb;
+    background:#1d4ed8;
+    color:white;
+}
+.btn-primary:hover{
+    opacity:0.9;
+}
+
+.btn-secondary {
+    border:2px solid #1d4ed8;
+    color:#1d4ed8;
+    background:white;
+}
+
+.btn-secondary:hover {
+    opacity:0.9;
+}
+
+/*=======================================
+Home Page - Hero
+=========================================*/
+
+.hero{
+    
+
+    position :relative;
+    min-height: 650px;
+    display:flex;
+    align-items:center;
+    padding:35px 0;
+    
+    background-size: 100% 100%;
+    background-position:center ;
+    background-repeat:no-repeat;
+    background-image:url("../images/Insurancebgimage.png");
+    transition:background-image 1s ease-in-out;
+}
+
+.hero::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(255,255,255,0.15);
+}
+
+
+
+
+.hero-content {
+    z-index:2;
+    position :relative;
+    width:90%;
+    max-width:1200px;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;    
+}
+
+
+
+.hero h1 {
+    font-size: clamp(32px, 8vw, 52px);
+    line-height: 1.2;
+    color: #000711;
+    margin: 0 0 20px;
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+
+.hero-description {
+    font-size:20px;
+    color:#00060e;
+    max-width: 550px;
+    line-height:1.5;
+    margin-top: 60px;
+    margin-bottom:250px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.hero-buttons {
+    display:flex;
+    gap: 15px;
+    flex-wrap:wrap; 
+    
+}
+
+.hero-slider {
+    flex:1;
+    position:relative;
+    height:430px;
+    overflow: hidden;
+    border-radius:20px;
+}
+
+.slide {
+    position: absolute;
+    width:100%;
+    height:100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active{
+    opacity:1;
+}
+
+.slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+/*=======================================
+Hero-Image
+=========================================*/
+
+.hero-image {
+    display:flex;
+    justify-content: center;
+}
+
+.image-placeholder{
+    width: 100%;
+    max-width:500px;
+    height:400px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#e8edf5;
+    border-radius:12px;
+
+    font-size:20px;
+    color:#555;
+}
+
+
+/*=======================================
+Services
+=========================================*/
+
+.services-preview {
+    padding:70px 0;
+}
+
+.section-heading {
+    text-align:center;
+    margin-bottom:50px;
+    background-color: #cfd6ef;
+}
+
+.section-heading p{
+    font-size:14px;
+    font-weight:700;
+    letter-spacing: 1px;
+}
+
+.section-heading h2{
+    font-size: clamp(28px,4vw,42px);
+    margin:10px 0;
+}
+
+.section-heading span{
+    color:#666;
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.service-card{
+    padding:30px;
+    border:1px solid #eeeeee;
+    border-radius:10px;
+    background:white;
+}
+
+.service-icon{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.service-card h3{
+    margin-bottom:12px;
+    font-size:21px;
+}
+
+.service-card p{
+    color:#666;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* ===============================
+       CONTAINER
+    =============================== */
+
+    .container {
+        width: 92%;
+        max-width: 100%;
+    }
+
+/* ===============================
+       HEADER / NAVBAR
+=============================== */
+    .navbar {
+        min-height: 70px;
+        position: relative;
+    }
+
+    .logo img {
+        width: 120px;
+        height: auto;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 28px;
+        color: #075b9f;
+        padding: 5px;
+    }
+
+    .nav-menu {
+        display: none;
+
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        background: #ffffff;
+        border-top: 1px solid #eeeeee;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+        padding: 10px 0;
+        z-index: 9999;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu > a {
+        display: block;
+        padding: 14px 20px;
+        font-size: 15px;
+    }
+
+
+    /* ===============================
+       SERVICES DROPDOWN
+    =============================== */
+
+    .nav-dropdown {
+        width: 100%;
+    }
+
+    .nav-dropdown .service-link {
+        display: block;
+        padding: 14px 20px;
+    }
+
+    .dropdown-menu {
+        position: static;
+
+        width: 100%;
+        min-width: 0;
+
+        border-radius: 0;
+        box-shadow: none;
+
+        padding: 0;
+        background: #f7f9fc;
+    }
+
+    .dropdown-menu a {
+        padding: 12px 35px;
+        font-size: 14px;
+    }
+/* ===============================
+   MOBILE HERO
+================================ */
+
+.hero {
+    min-height: auto;
+
+    padding: 45px 0 0;
+
+    background-image: url("../images/background2.png");
+
+    /* Show the complete image width */
+    background-size: 100% auto;
+
+    background-position: center bottom;
+
+    background-repeat: no-repeat;
+
+    background-color: #ffffff;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Remove the extra image layer */
+
+.hero::before {
+    display: none;
+}
+
+
+/* Hero content */
+
+.hero-content {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    gap: 0;
+
+    position: relative;
+
+    z-index: 2;
+
+    padding-bottom: 295px;
+}
+
+
+/* Hero text */
+
+.hero-text {
+    width: 120%;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* Heading */
+
+.hero h1 {
+    max-width: 83%;
+
+    margin: 0 auto 20px;
+
+    font-size: 31px;
+
+    line-height: 1.15;
+
+    color: #000711;
+}
+
+
+/* Description */
+
+.hero-description {
+    max-width: 90%;
+
+    margin: 0 auto 25px;
+
+    font-size: 17px;
+
+    line-height: 1.5;
+
+    color: #222;
+}
+
+
+/* Buttons */
+
+.hero-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 0;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+ /* ===============================
+     SERVICES
+=============================== */
+
+    .services-preview {
+        padding: 50px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service-card {
+        padding: 25px;
+        text-align: center;
+    }
+
+
+    /* ===============================
+       CTA
+    =============================== */
+
+    .cta {
+        padding: 50px 20px;
+    }
+
+    .cta h2 {
+        font-size: 30px;
+    }
+
+}
+/* =========================================
+   CTA
+========================================= */
+
+.cta{
+    padding:50px 20px;
+    text-align:center;
+    background: #f7f9fc;
+}
+
+.cta h2{
+    font-size:clamp(28px,4vw,42px);
+    margin-bottom:15px;
+}
+
+.cta p{
+    margin-bottom: 25px;
+    color:#666
+}
+
+/* =========================================
+Footer
+========================================= */
+
+.footer{
+    padding:25px 0;
+    text-align:center;
+    background:#111827;
+    color:white;
+}
+
+
+/* =========================================
+Tablet
+========================================= */
+
+@media (max-width:900){
+    .hero-content{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+    .hero-description{
+        margin-left:auto;
+        margin-right:auto;
+
+    }
+}
+
+/* ================================================= */
+/*                    FOOTER                         */
+/* ================================================= */
+
+.footer {
+    background: #075b9f;
+    color: #ffffff;
+    width: 100%;
+}
+
+
+/* ================================================= */
+/*              TOP FOOTER CONTAINER                 */
+/* ================================================= */
+
+.footer-container {
+    width: 94%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 55px 0 40px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.45fr
+        0.85fr
+        0.95fr
+        1.25fr;
+
+    column-gap: 55px;
+
+    align-items: start;
+}
+
+
+/* ================================================= */
+/*                FOOTER COLUMNS                     */
+/* ================================================= */
+
+.footer-column {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+
+/* ================================================= */
+/*                FOOTER HEADINGS                    */
+/* ================================================= */
+
+.footer-column h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 26px;
+
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+
+/* Yellow line */
+
+.footer-title-line {
+    width: 100px;
+
+    height: 2px;
+
+    background: #ffe500;
+
+    margin-top: 12px;
+
+    margin-bottom: 5px;
+}
+
+
+/* ================================================= */
+/*                  ABOUT US                         */
+/* ================================================= */
+
+.about-column p {
+    max-width: 430px;
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    line-height: 1.75;
+}
+
+
+/* ================================================= */
+/*                QUICK LINKS                        */
+/* ================================================= */
+
+.footer-column a {
+    display: flex;
+
+    align-items: center;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    line-height: 1.1;
+
+    margin-bottom: 22px;
+
+    transition: 0.25s ease;
+}
+
+
+.footer-column a span {
+    color: #ffe500;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    line-height: 15px;
+
+    margin-right: 14px;
+}
+
+
+.footer-column a:hover {
+    color: #ffe500;
+
+    transform: translateX(4px);
+}
+
+
+/* ================================================= */
+/*                  CONTACT                          */
+/* ================================================= */
+
+.contact-column p {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 13px;
+
+    margin: 0 0 22px;
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+}
+
+
+.contact-icon {
+    color: #ffe500;
+
+    font-size: 20px;
+
+    min-width: 24px;
+}
+
+
+/* ================================================= */
+/*                    DIVIDER                        */
+/* ================================================= */
+
+.footer-divider {
+    width: 90%;
+
+    max-width: 1560px;
+
+    height: 2px;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    margin: 0 auto;
+}
+
+
+/* ================================================= */
+/*                  DISCLAIMER                       */
+/* ================================================= */
+
+.footer-disclaimer {
+    width: 94%;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 35px 0 25px;
+}
+
+
+.footer-disclaimer p {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    text-align: left;
+}
+
+
+/* ================================================= */
+/*             IMPORTANT INFORMATION                 */
+/* ================================================= */
+
+.footer-regulatory {
+    text-align: center;
+
+    padding: 12px 20px 25px;
+}
+
+
+.footer-regulatory h3 {
+    margin: 0 0 12px;
+
+    font-size: 18px;
+
+    color: #ffffff;
+}
+
+
+.footer-regulatory p {
+    margin: 5px 0;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #ffffff;
+}
+
+
+
+
+/* =========================================
+   FOOTER - LEFT ALIGN ABOUT & CONTACT
+========================================= */
+
+.about-column {
+    text-align: left;
+}
+
+.about-column p {
+    text-align: left;
+}
+
+
+.contact-column {
+    text-align: left;
+}
+
+.contact-column p {
+    text-align: left;
+}
+
+
+/* Keep contact icon and text aligned */
+
+.contact-column p {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.contact-column .contact-icon {
+    flex-shrink: 0;
+}
+
+/* ================================================= */
+/*                  COPYRIGHT                        */
+/* ================================================= */
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.35);
+
+    text-align: center;
+
+    padding: 20px 10px;
+}
+
+
+.footer-bottom p {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 14px;
+}
+
+
+/* ================================================= */
+/*                    TABLET                         */
+/* ================================================= */
+
+@media (max-width: 900px) {
+
+    .footer-container {
+
+        grid-template-columns: 1fr 1fr;
+
+        row-gap: 45px;
+
+        column-gap: 40px;
+
+    }
+
+}
+
+
+/* ================================================= */
+/*                    MOBILE                         */
+/* ================================================= */
+
+@media (max-width: 600px) {
+
+    .footer-container {
+
+        grid-template-columns: 1fr;
+
+        row-gap: 40px;
+
+        text-align: center;
+
+    }
+
+
+    .footer-column {
+
+        align-items: center;
+
+        text-align: center;
+
+    }
+
+
+    .footer-title-line {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+    .about-column p {
+
+        max-width: 100%;
+
+        text-align: center;
+
+    }
+
+
+    .contact-column p {
+
+        justify-content: center;
+
+        text-align: left;
+
+    }
+
+
+    .footer-disclaimer p {
+
+        text-align: center;
+
+    }
+
+
+    .footer-links {
+
+        line-height: 2;
+
+    }
+
+}
+
+/* =================================================
+                    Insurance page                         
+================================================= */
+
+.insurance-header{
+    text-align:center;
+    padding:5px 20px 40px;
+    background:#f5f8fc;
+}
+
+.insurance-header h1{
+    margin:0 0 10px;
+    font-size: 42px;
+    font-weight:600;
+    color:#075b9f;
+}
+
+.insurance-header p{
+    margin:0;
+    font-size:18px;
+    color:#555;
+}
+
+
+
+/* ================================================= */
+/*                    What is Insurance                         */
+/* ================================================= */
+.insurance-intro{
+    padding:80px 0;
+    background:#ffffff;
+}
+
+.insurance-intro-container{
+    display:grid;
+    grid-template-columns:45% 55%;
+    align-items:center;
+    gap: 60px;
+}
+
+
+/*image*/
+
+.insurance-image{
+    width:100%;
+}
+
+.insurance-image img{
+    width:100%;
+    height:400px;
+    object-fit:cover;
+    border-radius: 12px;
+    display:block;
+}
+
+/* CONTENT */
+.insurance-content{
+    padding-right:30px;
+}
+
+.insurance-content .section-label{
+
+    margin:0 0 10px;
+    color:#075b9f;
+    font-size:16px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing: 1px;
+}
+.insurance-content h2{
+    margin: 0 0 20px;
+    font-size:34px;
+    color:#222;
+}
+
+.insurance-content p {
+    margin:0 0 18px;
+    color:#555;
+    font-size:16px;
+    line-height:1.8;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+@media (max-width:768px){
+    .insurance-header{
+        padding:45px 20px 30px;
+    }
+    .insurance-header h1 {
+        font-size:32px;
+    }
+    .insurance-header p{
+        font-size:16px;
+    }
+    .insurance-intro{
+        padding:50px 20px;
+    }
+    .insurance-intro-container{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+    .insurance-intro-container{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+    .insurance-image img{
+        height:280px;
+    }
+    .insurance-content {
+        padding-right:0;
+    }
+    .insurance-content h2{
+        font-size:28px;
+    }
+}
+
+/* =========================================
+   Types of Insurance
+========================================= */
+.insurance-type{
+    padding:80px 0;
+    background:#f7f9fc;
+}
+
+.insurance-section-heading{
+    text-align:center;
+    max-width:750px;
+    margin:0 auto 50px;
+}
+
+.insurance-section-heading .section-label{
+    margin-bottom:10px;
+    color:#075b9f;
+    font-size:15px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing: 1px;
+}
+
+.insurance-section-heading h2 {
+    margin:0 0 15px;
+    font-size:34px;
+    color:#222;
+}
+
+.insurance-section-heading > p:last-child{
+    margin:0;
+    color:#666;
+    font-size:16px;
+    line-height:1.7;
+}
+/* =========================================
+  Insurance Cards
+========================================= */
+
+.insurance-types-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:30px;
+}
+
+.insurance-type-card{
+    background:#ffffff;
+    border-radius:12px;
+    overflow: hidden;
+    box-shadow:0 5px 20px rgbs(0,0,0,0.08);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;                                      
+}
+
+.insurance-type-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* =========================================
+   Card Image
+========================================= */
+.insurance-type-image{
+    width: 100%;
+    height: 210px;
+}
+
+.insurance-type-image img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    display:block;
+}
+
+/* =========================================
+   Card-Content
+========================================= */
+.insurance-type-content{
+    padding:25px;
+}
+
+.insurance-type-content h3{
+    margin: 0 0 12px;
+    color:#075b9f;
+    font: size 23px;
+}
+
+.insurance-type-content p{
+    margin: 0 0 20px;
+    color:#075b9f;
+    font-size:15px;
+    line-height:1.7;
+}
+
+.insurance-learn-more{
+    color:#075b9f;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:600;
+}
+
+.insurance-learn-more:hover{
+    color:#043f70;
+}
+
+/* =========================================
+   Tablet
+========================================= */
+
+@media (max-width: 900px){
+    .insurance-types-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+/* =========================================
+   Mobile
+========================================= */
+@media(max-width:600px){
+    .insurance-types{
+        padding:60px 20px;
+    }
+    .insurance-section-heading h2 {
+    font-size: 28px;
+    }
+    .insurance-types-grid{
+        grid-template-columns:1fr;
+        gap: 25px;
+    }
+}
+
+/* =========================================
+   WHY CONSIDER INSURANCE
+========================================= */
+.why-insurance{
+    padding:80px 0;
+    background:#ffffff;
+}
+
+.why-insurance-heading{
+    text-align:center;
+    max-width:750px;
+    margin:0 auto 50px;
+}
+
+.why-insurance-heading .section-label {
+    margin: 0 0 10px;
+    color:#075b9f;
+    font-size:15px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.why-insurance-heading h2 {
+    margin:0 0 15px;
+    font-size:34px;
+    color:#222;
+}
+
+.why-insurance-heading > p:last-child{
+    margin:0;
+    color:#666;
+    font-size:16px;
+    line-height:1.7;
+}
+
+/* =========================================
+   WHY CARDS
+========================================= */
+
+.why-insurance-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.why-insurance-card{
+    padding:30px 25px;
+    text-align:center;
+    background:#f7f9fc;
+    border-radius:12px;
+    border:1px sold #eeeeee;
+    transition:transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.why-insurance-card:hover{
+    transform:translate(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* =========================================
+   ICON
+========================================= */
+.why-icon{
+    width:60px;
+    height:60px;
+    margin:0 auto 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content: center;
+
+    background:#eaf3fb;
+    border-radius:50%;
+    font-size:28px;
+}
+
+/* =========================================
+   Content
+========================================= */
+.why-insurance-card h3{
+    margin:0 0 12px;
+    color:#075b9f;
+    font-size:20px;
+}
+
+.why-insurance-card p{
+    margin:0 0 12px;
+    color:#075b9f;
+    font-size:15px;
+    line-height:1.7;
+}
+
+/* =========================================
+   Tablet
+========================================= */
+@media (max-width:900px){
+    .why-insurance-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+/* =========================================
+   mobile
+========================================= */
+@media (max-width:600px){
+    .why-insurance {
+        padding:60px 20px;
+    }
+    .why-insurance-heading h2{
+        font-size:28px;
+    }
+    .why- insurance-grid{
+        grid-template-columns: 1fr;
+        gap:20px;
+    }
+}
+
+/* =========================================
+   INSURANCE CTA
+========================================= */
+.insurance-cta{
+    padding: 10px 30px;
+    background:#8ebee4;
+}
+
+.insurance-cta-container {
+    text-align:center;
+}
+
+.insurance-cta-content {
+    max-width:750px;
+    margin:0 auto;
+}
+
+.insurance-cta-content h2{
+    margin:0 0 15px;
+    color:#000000;
+    font-size:34px;
+    font-weight:600;
+}
+
+.insurance-cta-content p{
+    margin: 0 auto 30px;
+    color:#0a0c0e;
+    font-size:16px;
+    line-height: 1.3;
+}
+
+/* Button*/
+
+.insurance-cta-button{
+    display:inline-block;
+    padding:10px 20px;
+    background:#ffffff;
+    color:#075b9f;
+
+    text-decoration:none;
+    font-size:15px;
+    font-weight:600;
+    border-radius:4px;
+    transition:03s ease;
+}
+
+.insurance-cta-button:hover{
+    background:#f0f0f0;
+    transform:translateY(-2px);
+}
+
+/* Mobile */
+@media (max-width:600px){
+    .insurance-cta{
+        padding:55px 20px;
+    }
+    .insurance-cta-content h2{
+        font-size:28px;
+    }
+    .insurance-cta-content p{
+        font-size: 15px;
+    }
+}
+
+/*=================================================
+Investment Header
+===================================================*/
+.investment-header{
+    text-align:center;
+    padding: 60px 20px 40px;
+    background:#f5f8fc;
+}
+
+.investment-header h1{
+    margin:0 0 10px;
+    font-size:42px;
+    font-weight:600;
+    color:#075b9f;
+}
+
+.investment-header p{
+    margin:0;
+    font-size:18px;
+    color:#555;
+}
+
+/*=================================================
+What is Investment
+===================================================*/
+.investment-intro{
+    padding:80px 0;
+    background:#ffffff;
+}
+.investment-intro-container{
+    display:grid;
+    grid-template-columns:45% 55%;
+    align-items:center;
+    gap:60px;
+}
+
+/* Image*/
+.investment-image{
+    width:100%;
+}
+.investment-image img{
+    width:100%;
+    height:400px;
+    object-fit:cover;
+    border-radius:12px;
+    display:block;
+}
+
+/*content*/
+.investment-content{
+    padding-right:30px;
+}
+
+.investment-content .section-label {
+    margin:0 0 10px;
+    color:#075b9f;
+    font-size:16px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.investment-content h2{
+    margin:0 0 20px;
+    font-size:34px;
+    color:#222;
+}
+
+.investment-content p{
+    margin:0 0 20px;
+    font-size:15px;
+    color:#222
+}
+
+/*===========================================
+Mobile
+============================================*/
+@media (max-width:768px){
+    .investment-header{
+        padding:45px 20px 30px;
+    }
+    .investment-header h1{
+        font-size:32px;
+    }
+    .investment-header p{
+        font-size:16px;
+    }
+    .investment-intro{
+        padding:50px 20px;
+    }
+    .investment-intro-container{
+        grid-template-columns:1fr;
+        gap: 35;
+    }
+    .investment-image img{
+        height:280px;
+    }
+    .investment-content{
+        padding-right:0;
+    }
+    .investment-content h2{
+        font-size:28px;
+    }
+}
+
+/*====================================================
+Types of Investment
+======================================================*/
+
+.investment-types{
+    padding:80px 0;
+    background:#f7f9fc;
+}
+
+.investment-section-heading{
+    text-align:center;
+    max-width:750px;
+    margin:0 auto 50px;
+}
+
+.investment-section-heading .section-label{
+    margin:0 0 10px;
+    color:#075b9f;
+    font-size:15px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.investment-section-heading h2{
+    margin:0 0 15px;
+    color:#666;
+    font-size:16px;
+    line-height:1.7;
+}
+.investment-section-heading > p:last-child{
+    margin:0;
+    color:#666;
+    font-size:16px;
+    line-height:1.7;
+}
+
+/*====================================================================
+ Cards
+=====================================================================*/
+
+.investment-types-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.investment-type-card{
+    background:#ffffff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.investment-type-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.12);
+}
+/*===============================================
+Card image
+===============================================*/
+.investment-type-image{
+    width:100%;
+    height:210px;
+}
+.investment-type-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+/*====================================================
+Card content
+=====================================================*/
+
+.investment-type-content{
+    padding:25px;
+}
+.investment-type-content h3{
+    margin:0 0 12px;
+    color:#075b9f;
+    font-size:23px;
+}
+.investment-type-content p{
+    margin:0 0 20px;
+    color:#555;
+    font-size:15px;
+    line-height:1.7;
+}
+.investment-learn-more{
+    color:#075b9f;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:600;
+}
+.investment-learn-more:hover{
+    color:#043f70;
+}
+
+/*===================================================
+Tablet
+=====================================================*/
+@media(max-width:900px){
+    .investment-type-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+/*========================================================
+Mobile
+========================================================*/
+@media (max-width:600px){
+    .investment-types{
+        padding:60px 20px;
+    }
+    .investment-section-heading h2 {
+        font-size:28px;
+    }
+    .investment-types-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+}
+/* =========================================
+   FINANCIAL PLANNING HEADER
+========================================= */
+.financial-header .container{
+    background:transparent;
+    padding:0;
+    margin:0 auto;
+}
+.financial-header {
+    text-align:center;
+    padding: 50px 20px 40px;
+    background:#f5f8fc;
+}
+.financial-header h1{
+    margin:0 0 10px;
+    font-size:42px;
+    font-weight:600;
+    color:#075b9f;
+}
+.financial-header p{
+    margin:0;
+    font-size:18px;
+   
+}
+/*================================================
+What is Financial Planning
+=================================================*/
+.financial-intro{
+    padding:80px 0;
+    background:#ffffff;
+}
+.financial-intro-container{
+    display:grid;
+    grid-template-columns:45% 55%;
+    align-items: center;
+    gap:60px;
+}
+/* image*/
+.financial-image{
+    width:100%;
+}
+.financial-image img{
+    width:100%;
+    height:400px;
+    object-fit:cover;
+    border-radius:12px;
+    display:block;
+}
+
+/* content*/
+.financial-content{
+    padding-right:30px;
+}
+.financial-coontent .section-label{
+    margin:0 0 10px;
+    color:#075b9f;
+    font-size:16px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+    
+ .financial-content h2{
+    margin : 0 0 20px;
+    font-size:34px;
+    color:#222
+}
+.financial-content p{
+    margin:0 0 18px;
+    color:#555;
+    font: size 16px;
+    line-height:1.8;
+}
+/* =========================================
+  Mobile
+========================================= */
+@media (max-width:768px){
+    .financial-header{
+        padding:45px 20px 30px;
+    }
+    .financial-header h1{
+        font-size:32px;
+    }
+    .financial-header p{
+        font-size:16px;
+    }
+    .financial-intro{
+        padding:50px 20px;
+    }
+    .financial-intro-container{
+        grid-template-columns:1fr;
+        gap:35px
+    }
+    .financial-image img{
+        height:280px;
+    }
+    .financial-content{
+        padding-right:0;
+    }
+    .financial.content h2{
+        font-size:28px;
+    }
+}
+/*====================================================
+Tax Saving Header
+======================================================*/
+
+.tax-header {
+    text-align:center;
+    padding:60px 20px 40px;
+    background:#f5f8fc;
+}
+.tax-header h1 {
+    margin:0 0 10px;
+    font-size:42px;
+    font-weight:600;
+    color:#075b9f;
+}
+.tax-header p{
+    margin:0;
+    font-size: 18px;
+    color:#555;
+}
+/*=============================================
+What is tax planning
+===============================================*/
+
+.tax-intro{
+    padding:80px  0;
+    background:#ffffff;
+}
+.tax-intro-container{
+    display:grid;
+    grid-template-columns:45% 55%;
+    align-items:center;
+    gap:60px;
+}
+/*Image*/
+.tax-image{
+    width:100%;
+}
+
+.tax-image img{
+    width:100%;
+    height:400px;
+    object-fit:cover;
+    border-radius:12px;
+    display:block;
+}
+/*Content*/
+.tax-content{
+    padding-right:30px;
+}
+.tax-content .section-label{
+    margin:0 0 10px;
+    color:#075b9f;
+    font-size:16px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+.tax-content h2{
+    margin:0 0 20px;
+    font-size: 34px;
+    color:#222;
+}
+.tax-content p{
+    margin:0 0 18px;
+    color:#555;
+    font-size:16px;
+    line-height:1.8;
+}
+/* =========================================
+   MOBILE
+========================================= */
+@media(max-width:768px){
+    .tax-header{
+        padding:45px 20px 30px;
+    }
+    .tax-header h1{
+        font-size:32px;
+    }
+    .tax-header p{
+        font-size:16px;
+    }
+    .tax-intro{
+        padding:50px 20px;
+    }
+    .tax-intro-container {
+        grid-template-columns: 1fr;
+        gap:35px;
+    }
+    .tax-image img{
+        height:280px;
+    }
+    .tax-content{
+        padding-right:0;
+    }
+    .tax-content h2{
+        font-size:28px;
+    }
+}
+/* =========================================
+   ABOUT AANSHI ASSOCIATE
+========================================= */
+.about-company{
+    padding:90px 0;
+    background:#ffffff;
+}
+
+.about-company-container{
+    display:grid;
+    grid-template-columns:45% 55%;
+    align-items:center;
+    gap:70px;
+}
+/* =========================================
+   CIRCULAR IMAGE
+========================================= */
+.about-company-image{
+    /* display:flex;
+    justify-content:center;
+    align-items:center; */
+    width:100%;
+    max-width:420%;
+    margin:0 auto;
+}
+
+.about-company-image img{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    object-fit: cover;
+}
+/* =========================================
+   ABOUT content
+========================================= */
+.about-company-content{
+    padding-right:20px;
+}
+
+.about-company-content .section-label {
+    margin:0 0 10px;
+    color:#075b9f;
+    font-size:15px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.about-company-content h1{
+    margin:0 0 18px;
+    color:#000000;
+    font-size: 16px;
+    line-height:1.8;
+}
+/* =========================================
+  mobile
+========================================= */
+@media (max-width:768px){
+    .about-company{
+        padding:60px 20px;
+    }
+    .about-company-container{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+    .about-company-image{
+        width: 90%;
+        margin-left: auto;
+        margin-right: 50;
+    }
+    .about-company-image img{
+        /* width:280px;
+        height:280px; */
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+    .about-company-content{
+        padding-right:0;
+    }
+    .about-company-content h1{
+        font-size:30px;
+    }
+}
+/* =========================================
+   OUR APPROACH
+========================================= */
+.our-approach{
+    padding:80px 0;
+    background:#f7f9fc;
+}
+.approach-heading{
+    max-width:750px;
+    margin:0 auto 50px;
+    text-align:center;
+}
+.approach-heading .section-label{
+    margin:0 0 10px;
+    color:#075b9f;
+    font-size:15px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+.approach-heading h2{
+    margin:0 0 15px;
+    font-size:34px;
+    color:#222;
+}
+.approach-heading > p:last-child{
+    margin:0;
+    color:#666;
+    font-size:16px;
+    line-height:1.7;
+}
+/* Cards*/
+.approach-grid{
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+.approach-card{
+    padding:35px 25px;
+    text-align:center;
+    background:#ffffff;
+    border-radius:12px;
+    border:1px solid #eeeeee;
+    transition:transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+.approach-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+/*ICON*/
+.approach-icon{
+    width:100px;
+    height:100px;
+    margin:0 auto 20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#eaf3fb;
+    border-radius:50%;
+
+    font-size:40px;
+}
+
+.approach-card h3{
+    margin:0 0 12px;
+    color:#075b9f;
+    font-size:21px;
+}
+
+.approach-card p{
+    margin:0;
+    color:#555;
+    font-size:15px;
+    line-height:1.7;
+}
+/* =========================================
+   Mobile
+========================================= */
+@media (max-width:768px){
+    .our-approach{
+        padding:60px 20px;
+    }
+    .approach-heading h2{
+        font-size:28px;
+    }
+    .approach-grid{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+}
+/* =========================================
+   WHY CHOOSE AANSHI ASSOCIATE
+========================================= */
+.why-choose {
+    padding:80px 0;
+    background:#ffffff;
+}
+.why-choose-heading{
+    max-width:750px;
+    margin:0 auto 50px;
+    text-align:center;
+}
+.why-choose-heading.section-label{
+    margin:0 0 10px;
+    color:#075b9f;
+    font-size:15px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+.why-choose-heading h2{
+    margin:0 0 15px;
+    font-size:34px;
+    color:#222;
+}
+.why-choose-heading > p:last-child{
+    margin:0;
+    color:#666;
+    font-size:16px;
+    line-height:1.7;
+}
+/* =========================================
+  CARDS
+========================================= */
+.why-choose-grid{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:25px
+}
+.why-choose-card{
+    padding:30px 22px;
+    text-align:center;
+    background:#f7f9fc;
+    border-radius:12px;
+    border:1px solid #eeeeee;
+    
+    transition:transform 0.3s ease,
+              box-shadow 0.3s ease;
+}
+.why-choose-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+/* =========================================
+  Icon
+========================================= */
+.why-choose-icon{
+    width:60px;
+    height:60px;
+    margin:0 auto 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#eaf3fb;
+    border-radius:50%;
+
+    color:#075b9f;
+    font-size:25px;
+    font-weight:600;
+}
+
+.why-choose-card h3{
+    margin:0 0 12px;
+    color:#075b9f;
+    font-size:15px;
+    line-height:1.7;
+}
+.why-choose-card p{
+    margin:0;
+    color:#555;
+    font-size:15px;
+    line-height:1.7;
+
+}
+
+/* =========================================
+  Tablet
+========================================= */
+@media (max-width:900px){
+    .why-choose-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+/* =========================================
+   Mobile
+========================================= */
+@media (max-width:600px){
+    .why-choose {
+        padding: 60px 20px;
+    }
+
+    .why-choose-heading h2 {
+        font-size: 28px;
+    }
+
+    .why-choose-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/*=====================================================
+Health Insurance Header
+======================================================*/
+.health-header{
+    text-align:center;
+    padding:60px 20px 40px;
+    background:#f5f8fc;
+}
+
+.health-header h1{
+    margin:0 0 12px;
+    font-size: 42px;
+    font-weight:600;
+    color:#075b9f;
+}
+.health-header p {
+    margin:0;
+    font-size:18px;
+    color:#555;
+}
+/* =========================================
+   HEALTH INSURANCE INTRO
+========================================= */
+.health-intro{
+    padding: 80px 0;
+    background:#ffffff;
+}
+.health-intro-content{
+    max-width:900px;
+    margin:0 auto;
+    
+}
+
+.health-intro-content .section-label{
+    margin:0 0 12px;
+    color:#075b9f;
+    font-size:15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align:center;
+}
+.health-intro-content h2 {
+    margin: 0 0 45px;
+    text-align:center;
+    font-size: 42px;
+    color: #222;
+}
+.healt-info{
+    max-width:850px;
+    margin :0 auto;
+}
+.health-info p{
+    margin:0 0 28px;
+    color:#555;
+    font-size:18px;
+    line-height:1.1;
+    text-align: left;
+}
+
+.health-info strong {
+    color: #075b9f;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    
+    .health-intro {
+        padding: 60px 20px;
+    }
+
+    .health-intro-content h2 {
+        font-size: 30px;
+        margin-bottom:35px;
+    }
+     .health-info p {
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 22px;
+    }
+}
+/* =========================================
+   HEALTH INSURANCE BENEFITS
+========================================= */
+
+.health-benefits {
+    padding: 80px 0;
+    background: #f7f9fc;
+}
+
+.health-section-heading {
+    max-width: 750px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+.health-section-heading .section-label{
+    margin:0 0 10px;
+    color:#075b9f;
+    font-size:15px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+.health-section-heading h2{
+    margin:0 0 15px;
+    font-size:34px;
+    color:#222;
+}
+.health-section-heading > p:last-child{
+    margin:0;
+    color:#666;
+    line-height:1.7;
+    font-size:16px;
+}
+
+/*Cards*/
+.health-benifits-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+.health-benefit-card {
+    padding: 35px 25px;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #eeeeee;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.health-benefit-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Icons */
+
+.health-benefit-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eaf3fb;
+    border-radius: 50%;
+
+    font-size: 28px;
+}
+
+
+.health-benefit-card h3 {
+    margin: 0 0 12px;
+    color: #075b9f;
+    font-size: 21px;
+}
+
+.health-benefit-card p {
+    margin: 0;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .health-benefits {
+        padding: 60px 20px;
+    }
+
+    .health-section-heading h2 {
+        font-size: 28px;
+    }
+
+    .health-benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+}
+
+/*==============================================
+Life insurance header
+===============================================*/
+.life-header{
+    text-align:center;
+    padding:60px 20px 40px;
+    background:#f5f8fc;
+}
+
+.life-header h1{
+    margin:0 0 12px;
+    font-size:42px;
+    font-weight:600;
+    color:#075b9f;
+}
+.life-header p{
+    margin:0;
+    font-size:22px;
+    font-weight:600 ;
+    color:#555;
+}
+/*===============================================================
+LIFE INSURANCE INTRO
+===============================================================*/
+.life-intro{
+    padding:80px 0;
+    background:#ffffff;
+}
+
+.life-intro-content{
+    max-width:900px;
+    margin:0 auto;
+    text-align:center;
+}
+.life-intro-content .section-label {
+    margin:0 0 12px;
+    color:#075b9f;
+    font-size: 15px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    text-align:center
+}
+.life-intro-content h2{
+    margin:0 0 45px;
+    font-size:42px;
+    font-weight:600;
+    color:#222;
+    text-align:center;
+}
+.life-intro-content p:not(.section-label){
+    margin:0 0 18px;
+    color:#555;
+    font-size:16px;
+    line-height:1.8;
+}
+
+/*information*/
+.life-info{
+    max-width:850px;
+    margin:0 auto;
+}
+.life-info p{
+    margin:0 0 28px;
+    color:#555;
+    font-size:18px;
+    line-height:1.1;
+    text-align:left;
+}
+/*point Heading*/
+.life-info strong{
+    color:#075b9f;
+    font-weight:600;
+}
+/* =========================================
+   MOBILE
+========================================= */
+@media (max-width: 768px){
+    .life-intro{
+        padding:60px 20px;
+    }
+    .life-intro-content h2{
+        font-size: 30px;
+        margin-bottom:35px;
+    }
+    .life-info p{
+        font-size:16px;
+        line-height:1.1;
+        margin-bottom:22px;
+    }
+}
+
+/* =========================================
+   LIFE INSURANCE BENEFITS
+========================================= */
+
+.life-benefits {
+    padding: 80px 0;
+    background: #f7f9fc;
+}
+
+.life-section-heading {
+    max-width: 750px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.life-section-heading .section-label {
+    margin: 0 0 10px;
+    color: #075b9f;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.life-section-heading h2 {
+    margin: 0 0 15px;
+    font-size: 34px;
+    color: #222;
+}
+
+.life-section-heading > p:last-child {
+    margin: 0;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   BENEFIT CARDS
+========================================= */
+
+.life-benefits-grid {
+    display: grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap: 30px;
+}
+
+.life-benefit-card {
+   
+    padding: 35px 25px;
+    text-align: center;
+
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #eeeeee;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.life-benefit-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.life-benefit-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eaf3fb;
+    border-radius: 50%;
+
+    font-size: 28px;
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.life-benefit-card h3 {
+    margin: 0 0 12px;
+
+    color: #075b9f;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.life-benefit-card p {
+    /* max-width: 1000px; */
+
+    margin: 0;
+
+    color: #555;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .life-benefits {
+        padding: 60px 20px;
+    }
+
+    .life-section-heading h2 {
+        font-size: 28px;
+    }
+
+    .life-section-heading > p:last-child {
+        font-size: 16px;
+    }
+
+    .life-benefit-card {
+        min-height: 280px;
+        padding: 40px 25px;
+    }
+
+    .life-benefit-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 25px;
+        font-size: 32px;
+    }
+
+    .life-benefit-card h3 {
+        font-size: 25px;
+    }
+
+    .life-benefit-card p {
+        font-size: 16px;
+    }
+    .life-beefit-grid{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+}
+/* =========================================
+   GENERAL INSURANCE HEADER
+========================================= */
+.general-header{
+    text-align:center;
+    padding:60px 20px,40px;
+    background:#f5f8fc;
+}
+.general-header h1{
+    margin:0 0 12px;
+    font-size:42px;
+    font-weight:600;
+    color:#075b9f;
+}
+.general-header p{
+    margin:0;
+    font-size:18px;
+    color:#555;
+}
+
+/* =========================================
+   GENERAL INSURANCE Intro
+========================================= */
+.general-intro{
+    padding:80px 0;
+    background:#ffffff;
+}
+.general-intro-content{
+    max-width:900px;
+    margin:0 auto;
+}
+
+.general-intro-content .section-label{
+    margin:0 0 12px;
+    color:#075b9f;
+    text-align:center;
+    font-size:15px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+.general-intro-content h2{
+    margin:0 0 45px;
+    text-align:center;
+    font-size:42px;
+    font-weight:600;
+    color:#222;
+}
+/* Information*/
+.general-info{
+    max-width:850px;
+    color:#555;
+    font-size:18px;
+    line-height:1.8;
+    text-align:left;
+}
+/* Point heading*/
+.general-info strong{
+    color:#075b9f;
+    font-weight:600;
+    
+}
+
+/* =========================================
+   Mobile
+========================================= */
+@media (max-width:768px){
+    .general-intro{
+        padding:60px 20px;
+    }
+    .general-intro-content h2{
+        font-size:30px;
+        margin-bottom:35px;
+    }
+    .general-info p{
+        font-size:16px;
+        line-height:1.7;
+        margin-bottom:22px;
+    }
+}
+/* =========================================
+   GENERAL INSURANCE - KEY BENEFITS
+========================================= */
+.general-benefits{
+    padding:80px 0;
+    background:#f7f9fc;
+}
+/* section heading*/
+.general-section-heading{
+    max-width:850;
+    margin:0 auto 50px;
+    text-align:center;
+}
+.general-section-heading .section-label{
+    margin:0 0 10px;
+    color:#075b9f;
+    font-size:15px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing: 1px;
+}
+.general-section-heading h2{
+    margin:0 0 20px;
+    font-size:44px;
+    color:#222;
+}
+.general-section-heading > p:last-child{
+    margin:0;
+    color:#555;
+    font-size:18px;
+    line-height:1.7;
+}
+/* Benefit grid */
+.general-benefit-card{
+    width:100%;
+    min-height:320px;
+
+    padding:55px 50px;
+
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: center;
+    text-align:center;
+    background:#ffffff;
+    border-radius:18px;
+    border:1px solid #eeeeee;
+    box-shadow:0 8px 25px rgba(0,0,0,0.06);
+    transition:transform 0.3s ease,
+                box-shadow0.3s ease;
+}
+
+/* Hover effect*/
+.general-benefit-card:hover{
+    transform:translateY(-4px);
+    box-shadow:matrix0 12px 30px rgba(0,0,0,0.10);
+}
+/*ICONS*/
+.general-benefit-icon{
+    width:105px;
+    height:105px;
+
+    margin:0 auto 35px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#eaf3fb;
+    border-radius: 50%;
+    font-size:40px;
+}
+
+/*Card Heading*/
+.general-benefit-card h3{
+    margin:0 0 20px;
+    color:#075b9f;
+    font-size:32px;
+    font-weight:600;
+}
+
+/*Card Paragraph*/
+.general-benefit-card p{
+    max-width:1000px;
+    margin:0;
+    color:#555;
+    font-size:18px;
+    line-height:1.8;
+}
+/*====================================================
+Mobile
+====================================================*/
+@media(max-width:768px){
+    .general-benefits{
+        padding:60px 20px;
+    }
+    .general-section-heading h2{
+        font-size:32px;
+    }
+    .general-section-heading >p:last-child{
+        font-size:16px;
+    }
+    .general-benefit-card{
+        min-height:280px;
+        padding:40px 25px;
+    }
+    .general-benefit-icon{
+        width:80px;
+        height:80px;
+        margin-bottom:25px;
+        font-size:32px;
+    }
+    .general-benefit-card h3{
+        font-size:25px;
+    }
+    .general-benefit-card p{
+        font-size:16px;
+    }
+}
+/* =========================================
+   GENERAL INSURANCE - TYPES
+========================================= */
+
+.general-types {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+
+/* Section Heading */
+
+.general-types-heading {
+    max-width: 850px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.general-types-heading .section-label {
+    margin: 0 0 10px;
+
+    color: #075b9f;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.general-types-heading h2 {
+    margin: 0 0 20px;
+
+    font-size: 44px;
+
+    color: #222;
+}
+
+.general-types-heading > p:last-child {
+    margin: 0;
+
+    color: #555;
+
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   2 × 2 GRID
+========================================= */
+
+.general-types-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+}
+
+
+/* Type Card */
+
+.general-type-card {
+    min-height: 250px;
+
+    padding: 40px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+
+    background: #f7f9fc;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 16px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Hover */
+
+.general-type-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Icon */
+
+.general-type-icon {
+    min-width: 90px;
+    width: 90px;
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eaf3fb;
+
+    border-radius: 50%;
+
+    font-size: 38px;
+}
+
+
+/* Content */
+
+.general-type-content h3 {
+    margin: 0 0 12px;
+
+    color: #075b9f;
+
+    font-size: 24px;
+}
+
+.general-type-content p {
+    margin: 0;
+
+    color: #555;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .general-types {
+        padding: 60px 20px;
+    }
+
+    .general-types-heading h2 {
+        font-size: 32px;
+    }
+
+    .general-types-heading > p:last-child {
+        font-size: 16px;
+    }
+
+    .general-types-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .general-type-card {
+        min-height: auto;
+
+        padding: 30px 25px;
+
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 20px;
+    }
+
+    .general-type-icon {
+        width: 80px;
+        min-width: 80px;
+        height: 80px;
+
+        font-size: 32px;
+    }
+
+    .general-type-content h3 {
+        font-size: 22px;
+    }
+
+    .general-type-content p {
+        font-size: 15px;
+    }
+}
+
+/*=========================================================
+Fixed Deposit Types
+==========================================================*/
+.fd-types{
+    padding:80px 0;
+    background:#ffffff;
+}
+.fd-types-heading{
+    max-width:850px;
+    margin:0 auto 50px;
+    text-align:center;
+}
+.fd-types-heading .section-label{
+    margin:0 0 10px;
+    color:#075b9f;
+    font-size:15px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+.fd-types-heading h2{
+    margin:0 0 20px;
+    font-size:44px;
+    color:#222;
+}
+.fd-types-heading > p:last-child{
+    margin:0;
+    color:#555;
+    font-size:18px;
+    line-height:1.7;
+}
+/*Cards*/
+.fd-types-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+.fd-type-card{
+    min-height:250px;
+    padding:40px;
+    display:flex;
+    align-items:center;
+    gap:30px;
+    background:#f7f9fc;
+    border:1px solid #eeeeee;
+    border-radius:16px;
+    transition:transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+.fd-type-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+/*Icon*/
+.fd-type-icon{
+    min-width:90px;
+    width:90px;
+    height:90px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#eaf3fb;
+    border-radius:50%;
+    font-size:38px;
+}
+
+/*Content*/
+.fd-type-content h3{
+    margin:0 0 12px;
+
+    color:#075b9f;
+    font-size:24px;
+}
+.fd-type-content p {
+    margin:0;
+
+    color:#555;
+    font-size:16px;
+    line-height:1.7;
+}
+/*================================================
+Mobile
+================================================*/
+@media (max-width:768px){
+    .fd-types{
+        padding:60px 20px;
+    }
+    .fd-types-heading h2{
+        font-size:32px;
+    }
+    .fd-types-heading > p:last-child{
+        font-size:16px;
+    }
+    .fd-types-grid{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+    .fd-type-card{
+        min-height:auto;
+        padding:30px 25px;
+        flex-direction:column;
+        text-align:center;
+
+        gap:20px;
+    }
+    .fd-type-icon{
+        width:80px;
+        min-width:80px;
+        height:80px;
+        font-size:32px
+    }
+      .fd-type-content h3 {
+        font-size: 22px;
+    }
+
+    .fd-type-content p {
+        font-size: 15px;
+    }
+}
+/*==============================================
+Will Writting - intro
+==============================================*/
+.will-header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    background: #f5f8fc;
+}
+
+.will-header h1 {
+    margin: 0 0 12px;
+    font-size: 42px;
+    font-weight: 600;
+    color: #075b9f;
+}
+
+.will-header p {
+    margin: 0;
+    font-size: 18px;
+    color: #555;
+}
+
+.will-intro{
+    padding:80px 0;
+    background:#ffffff;
+}
+.will-intro-content{
+    max-width:850px;
+    margin:0 auto;
+    text-align:center;
+}
+.will-intro-content{
+    max-width:850px;
+    margin:0 auto;
+    text-align:center;
+}
+.will-intro-content .section-label{
+    margin:0 0 10px;
+    color:#075b9f;
+    font-size:15px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+.will-intro-content h2 {
+    margin:0 0 25px;
+    font-size:34px;
+    color:#222;
+}
+.will-intro-content p:not(.section-label){
+    margin:0 0 18px;
+    color:#555;
+    font-size:16px;
+    line-height:1.8;
+}
+/*========================================================
+Mobile
+========================================================*/
+@media (maxx-width:768px){
+    .will-header{
+        padding:45px 20px 30px;
+        
+    }
+    .will-header h1{
+        font-size:32px;
+    }
+    .will-header p{
+        font-size:16px;
+    }
+    .will-intro{
+        padding:60px 20px;
+    }
+    .will-intro-content h2{
+        font-size:28px;
+    }
+    .will-intro-content p:not(.section-label){
+        font-size:16px;
+        line-height:1.7;
+    }
+}
+
+
+/* =========================================================
+   CONTACT PAGE
+========================================================= */
+
+.contact-header {
+    padding: 20px 0;
+    text-align: center;
+    background: #f7f9fc;
+}
+
+.contact-header .container {
+    max-width: 800px;
+}
+
+.contact-header h1 {
+    margin-bottom: 15px;
+    color: #222;
+    font-size: 42px;
+}
+
+.contact-header p:last-child {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.contact-section {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+.contact-info,.contact-form{
+    min-width:0;
+}
+.google-form-container{
+    width:100%;
+}
+
+.google-form-container iframe{
+    display:block;
+    width:100%;
+    border:none;
+}
+
+.contact-info h2,
+.contact-form-container h2 {
+    margin-bottom: 18px;
+    color: #222;
+    font-size: 32px;
+}
+
+.contact-intro {
+    margin-bottom: 35px;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.contact-item .contact-icon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eaf3fb;
+    border-radius: 50%;
+    font-size: 21px;
+}
+
+.contact-item h3 {
+    margin-bottom: 6px;
+    color: #075b9f;
+    font-size: 18px;
+}
+
+.contact-item p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/*==============================================
+ Google Form mobile visibility
+ =============================================== */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 40px 0;
+        overflow: visible;
+    }
+
+    .contact-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 90%;
+        gap: 30px;
+    }
+
+    .contact-info,
+    .contact-form {
+        display: block;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .google-form-container {
+        display: block;
+        width: 100%;
+        min-height: 800px;
+        overflow: visible;
+    }
+
+    .google-form-container iframe {
+        display: block;
+        width: 100%;
+        min-height: 800px;
+        border: 0;
+    }
+}
+
+/* Reviews Page Header */
+.reviews-header {
+    background: #f5f7fa;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.reviews-header h1 {
+    font-size: 38px;
+    color: #222;
+    margin: 12px 0;
+}
+
+.reviews-header p {
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Reviews Section */
+.reviews-section {
+    padding: 60px 0;
+    background: #fff;
+}
+
+/*REVIEW CARD APPERANCE*/
+.reviews-container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 25px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+    padding: 10px 5px 25px;
+}
+
+/* Review Card */
+.review-card {
+    flex: 0 0 calc((100% - 50px) / 3);
+    min-width: 300px;
+    padding: 25px;
+    background: #fff;
+    border: 1px solid #e1e6ed;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+    scroll-snap-align: start;
+}
+
+/* Client Profile */
+.review-profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.client-photo {
+    width: 85px;
+    height: 85px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.review-client-info h3 {
+    font-size: 18px;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.client-designation,
+.client-company {
+    font-size: 14px;
+    color: #666;
+    margin: 4px 0;
+}
+
+/* Review Text */
+.review-content {
+    border-top: 1px solid #eee;
+    padding-top: 18px;
+}
+
+.review-content p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    .review-card{
+        flex-basis:46%;
+    }
+    .reviews-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+
+    .review-card {
+        width: 85%;
+        max-width: 350px;
+        height: auto !important;
+        min-height: 0;
+        overflow: visible !important;
+        box-sizing: border-box;
+    }
+
+    /* Client information section */
+    .review-card .review-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    /* Client photo */
+    .review-card .review-header img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        flex-shrink: 0;
+        margin-bottom: 15px;
+    }
+
+    /* Client details */
+    .review-card .client-info {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    /* Client name */
+    .review-card .client-info h3 {
+        width: 100%;
+        margin: 0 0 10px;
+        white-space: normal;
+    }
+
+    /* Designation */
+    .review-card .client-designation {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        white-space: normal !important;
+        overflow: visible !important;
+        overflow-wrap: break-word;
+        word-break: normal;
+        line-height: 1.1;
+        text-align: left;
+        font-size:5px; 
+    }
+
+    /* Company name */
+    .review-card .client-company {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        white-space: normal !important;
+        overflow: visible !important;
+        overflow-wrap: break-word;
+        word-break: normal;
+        line-height: 1.5;
+        text-align: center;
+    }
+}
+
+/* Reviews carousel and arrows */
+.reviews-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.review-arrow {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: #a88a55;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.review-arrow:hover {
+    background: #806638;
+}
+
+.reviews-container {
+    flex: 1;
+    min-width: 0;
+}
+
+@media (max-width: 600px) {
+    .reviews-carousel {
+        gap: 6px;
+    }
+
+    .review-arrow {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+}
+
+.footer-social {
+    text-align: center;
+    margin: 25px auto;
+}
+
+.footer-social h3 {
+    margin-bottom: 15px;
+}
+
+.footer-social .social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-social .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #18352f;
+    font-size: 20px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.footer-social .social-links a:hover {
+    background: #d4af37;
+    color: #ffffff;
+}
+
+/*==============================================
+Watsapp icon
+==============================================*/
+.whatsapp-float {
+    position: fixed;
+    width: 55px;
+    height: 55px;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    text-decoration: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 48px;
+        height: 48px;
+        font-size: 28px;
+        bottom: 18px;
+        right: 18px;
+    }
+}
+
+/*=====================================================
+Google form
+======================================================*/
+.map-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+    height: 200px;
+    border: 0;
+}
+
+@media (max-width: 768px) {
+    .map-container iframe {
+        height: 300px;
+    }
+}
+
+
+
+
+
+
