@@ -35,7 +35,7 @@ if (hero) {
         // "images/background2.png",
         // "images/clock.jpg",
         "images/Download Seedling Growth Stages.jpeg",
-        "images/background_image.jpeg"
+        "images/backgroundimage1.png"
     ];
 
     let currentImage = 0;
